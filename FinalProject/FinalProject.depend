@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1462060225 source:/home/user/Desktop/Contribution/Samuels_Metz_CSCI2270_FinalProject/FinalProject/main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<stdlib.h>
+	<stdio.h>
+	"Heroes.h"
+	<string>
+
+1462057408 /home/user/Desktop/Contribution/Samuels_Metz_CSCI2270_FinalProject/FinalProject/include/Heroes.h
+	<iostream>
+
+1462057408 source:/home/user/Desktop/Contribution/Samuels_Metz_CSCI2270_FinalProject/FinalProject/src/Heroes.cpp
+	"Heroes.h"
+
