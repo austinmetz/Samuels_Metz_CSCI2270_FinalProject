@@ -11,7 +11,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     bool run = true;
-    int choice;
+    string choice;
     Heroes cd;
 
     ifstream inFile; //reading from our .txt file
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
     else
     {
-        cout<<"cant read file"<<endl;
+        cout<<"can't read file"<<endl;
     }
 
     while(run == true)
@@ -59,32 +59,33 @@ int main(int argc, char *argv[])
         cout<<"4. Edit a Hero's stats"<<endl;
         cout<<"5. Delete a Hero"<<endl;
         cout<<"6. Quit"<<endl;
-        cin>>choice;
+        getline(cin,choice);
 
-        if(choice == 1)
+        if(choice == "1")
         {
             cd.printHeroes();
         }
-        else if(choice == 2)
+        else if(choice == "2")
         {
             cout<<"Enter a Heroes name below to see their stats: "<<endl;
-            string dummy;
+            //string dummy;
             string name;
-            getline(cin,dummy);
+            //getline(cin,dummy);
             getline(cin,name);
             cd.findHero(name);
+            //cout<<"I'm here.";
             cout<<""<<endl;
         }
-        else if(choice == 3)
+        else if(choice == "3")
         {
-            string dummy;
+            //string dummy;
             string name;
             double winrate;
             int GPM;
             int XPM;
             double KDA;
             cout<<"Enter Hero Name"<<endl;
-            getline(cin, dummy);
+            //getline(cin, dummy);
             getline(cin, name);
             cout<<"Enter Hero Win Rate (use float)"<<endl;
             cin>>winrate;
@@ -96,10 +97,10 @@ int main(int argc, char *argv[])
             cin>>KDA;
             cd.addHeroNode(name, winrate, XPM, GPM, KDA);
         }
-        else if(choice == 4)
+        else if(choice == "4")
         {
             bool subRun = true;
-            int subChoice;
+            string subChoice;
             while(subRun == true)
             {
                 cout<<"Hero Stat Editor"<<endl;
@@ -110,68 +111,68 @@ int main(int argc, char *argv[])
                 cout<<"4. Edit Gold Per Minute"<<endl;
                 cout<<"5. Edit Kill Death Assist Ratio"<<endl;
                 cout<<"6. Return to Main Menu"<<endl;
-                cin>>subChoice;
-                if(subChoice == 1)
+                getline(cin,subChoice);
+                if(subChoice == "1")
                 {
-                    string dummy;
+                    //string dummy;
                     string name;
                     string newName;
                     cout<<"Enter hero name:"<<endl;
-                    getline(cin, dummy);
+                    //getline(cin, dummy);
                     getline(cin, name);
                     cout<<"Enter new name:"<<endl;
                     getline(cin, newName);
                     cd.editName(name, newName);
                 }
-                else if(subChoice == 2)
+                else if(subChoice == "2")
                 {
-                    string dummy;
+                    //string dummy;
                     string name;
                     double winrate;
                     cout<<"Enter hero name:"<<endl;
-                    getline(cin, dummy);
+                    //getline(cin, dummy);
                     getline(cin, name);
                     cout<<"Enter new win rate:"<<endl;
                     cin>>winrate;
                     cd.editWR(name, winrate);
                 }
-                else if(subChoice == 3)
+                else if(subChoice == "3")
                 {
-                    string dummy;
+                    //string dummy;
                     string name;
                     int experience;
                     cout<<"Enter hero name:"<<endl;
-                    getline(cin, dummy);
+                    //getline(cin, dummy);
                     getline(cin, name);
                     cout<<"Enter new win rate:"<<endl;
                     cin>>experience;
                     cd.editXPM(name, experience);
                 }
-                else if(subChoice == 4)
+                else if(subChoice == "4")
                 {
-                    string dummy;
+                    //string dummy;
                     string name;
                     int gold;
                     cout<<"Enter hero name:"<<endl;
-                    getline(cin, dummy);
+                    //getline(cin, dummy);
                     getline(cin, name);
                     cout<<"Enter new gold per minute:"<<endl;
                     cin>>gold;
                     cd.editGPM(name, gold);
                 }
-                else if(subChoice == 5)
+                else if(subChoice == "5")
                 {
-                    string dummy;
+                    //string dummy;
                     string name;
                     double killdeath;
                     cout<<"Enter hero name:"<<endl;
-                    getline(cin, dummy);
+                    //getline(cin, dummy);
                     getline(cin, name);
                     cout<<"Enter new kill death assist ratio:"<<endl;
                     cin>>killdeath;
                     cd.editKDA(name, killdeath);
                 }
-                else if(subChoice == 6)
+                else if(subChoice == "6")
                 {
                     subRun = false;
                 }
@@ -179,20 +180,20 @@ int main(int argc, char *argv[])
                 {
                     cout<<"Sorry, wrong input"<<endl;
                     cout<<"Please re-enter your choice"<<endl;
-                    cin>>choice;
+                    getline(cin,choice);
                 }
             }
         }
-        else if(choice == 5)
+        else if(choice == "5")
         {
             cout<<"Enter a Heroes name to be deleted: "<<endl;
-            string dummy;
+            //string dummy;
             string name;
-            getline(cin,dummy);
+            //getline(cin,dummy);
             getline(cin,name);
             cd.deleteHeroNode(name);
         }
-        else if(choice == 6)
+        else if(choice == "6")
         {
             cout<<"GoodBYE!"<<endl;
             run = false;
@@ -201,7 +202,7 @@ int main(int argc, char *argv[])
         {
             cout<<"Sorry, wrong input"<<endl;
             cout<<"Please re-enter your choice"<<endl;
-            cin>>choice;
+            getline(cin,choice);
 
         }
     }
